@@ -8,6 +8,25 @@ The project goals are:
 
 * Creation of formations and tactics for a given club-squad, and finding the best players orders for each formation.
 
+## Getting Started (for Windows)
+
+Running these commands will get you a copy of the project up and running on your local machine.
+
+```
+git clone https://github.com/omermadmon/prj_FIFA.git
+cd prj_FIFA
+pip install -r requirements.txt
+python main.py juve
+```
+
+Note: 'juve' is an argument standing for the club name for predictions scores and creating tactics.
+
+It can also be: barca, real madrid, iverpool and more.
+
+Running the program without an argument or giving a non-exsisting club name (such as 'Hapoel Haifa') will trow an exception.
+
+Results and loggings will be written to text files at the directories 'Results' and 'Log'.
+
 ## Authors
 
 * **Omer Madmon** 
