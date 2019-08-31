@@ -19,7 +19,7 @@ pip install -r requirements.txt
 python main.py juve
 ```
 
-Note: 'juve' is an argument standing for the club name for predictions scores and creating tactics.
+Note: 'juve' is an argument standing for the club name for predicting scores and creating tactics.
 
 It can also be: barca, real madrid, liverpool and more.
 
