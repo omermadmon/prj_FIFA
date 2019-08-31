@@ -25,7 +25,7 @@ It can also be: barca, real madrid, iverpool and more.
 
 Running the program without an argument or giving a non-exsisting club name (such as 'Hapoel Haifa') will trow an exception.
 
-Results and loggings will be written to text files at the directories 'Results' and 'Log'.
+Results and loggings will be written to text files at the directories 'Results' and 'Logs'.
 
 ## Authors
 
