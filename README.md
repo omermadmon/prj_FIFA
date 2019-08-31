@@ -21,7 +21,7 @@ python main.py juve
 
 Note: 'juve' is an argument standing for the club name for predictions scores and creating tactics.
 
-It can also be: barca, real madrid, iverpool and more.
+It can also be: barca, real madrid, liverpool and more.
 
 Running the program without an argument or giving a non-exsisting club name (such as 'Hapoel Haifa') will trow an exception.
 
