@@ -1,4 +1,4 @@
-# prj_FIFA
+# FIFA Data Analysis Project
 
 This is a data analysis project engaged with official FIFA 18 dataset (via kaggle.com).
 
