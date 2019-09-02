@@ -1,6 +1,7 @@
 # FIFA Data Analysis Project
 
 Data analysis project engaged with official FIFA 18 dataset (via kaggle).
+
 The project goals are:
 
 * Prediction of players FIFA scores, while minimizing the deviation comparing to the ground-truth scores.
