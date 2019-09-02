@@ -1,16 +1,15 @@
 # FIFA Data Analysis Project
 
-This is a data analysis project engaged with official FIFA 18 dataset (via kaggle.com).
-
+Data analysis project engaged with official FIFA 18 dataset (via kaggle).
 The project goals are:
 
-* Prediction of players FIFA scores (per field positions), and minimizing the deviation from ground-truth.
+* Prediction of players FIFA scores, while minimizing the deviation comparing to the ground-truth scores.
 
-* Creation of formations and tactics for a given club-squad, and finding the best players orders for each formation.
+* Creation of formations and tactics for a given club-squad, and finding the ideal players orders for each formation.
 
 ## Getting Started (for Windows)
 
-Running these commands will get you a copy of the project up and running on your local machine.
+Running these commands will get you a copy of the project up and running on your local machine:
 
 ```
 git clone https://github.com/omermadmon/prj_FIFA.git
