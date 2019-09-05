@@ -22,13 +22,13 @@ pip install -r requirements.txt
 
 ### Running
 
-#### Predicting FIFA scores and creating tactics for a certain club
+#### * Predicting FIFA scores and creating tactics for a certain club
 
 ```
 python main.py juve
 ```
 
-Note: 'juve' is an argument standing for the club name for predicting scores and creating tactics.
+Note: 'juve' is an argument standing for the club name.
 
 It can also be: barca, real madrid, liverpool, etc.
 
@@ -38,7 +38,7 @@ It might increase the average deviation per position (FIFA does not take this cr
 Results and loggings will be written to text files at the directories 'Results' and 'Logs'.
 
 
-#### Cross-validation
+#### * Cross-validation
 
 ```
 python main.py cv
