@@ -52,7 +52,7 @@ Loggings will be written to text files at 'Logs' directory, and cross-validation
 
 
 
-Running the program without an argument or giving a non-exsisting club name (such as 'Hapoel Haifa') will throw an exception.
+*Running the program without an argument or giving a non-exsisting club name (such as 'Hapoel Haifa') will throw an exception.*
 
 
 ## Authors
