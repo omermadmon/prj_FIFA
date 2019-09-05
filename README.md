@@ -50,11 +50,7 @@ Classifier will be set to FIFA mode, tracing FIFA score algorithm.
 
 Loggings will be written to text files at 'Logs' directory, and cross-validation result will be written to the console.
 
-
-
-
-
-*Running the program without an argument or giving a non-exsisting club name (such as 'Hapoel Haifa') will throw an exception.*
+<br />*Running the program without an argument or giving a non-exsisting club name (such as 'Hapoel Haifa') will throw an exception.*
 
 
 ## Authors
