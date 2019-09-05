@@ -30,7 +30,7 @@ python main.py juve
 
 Note: 'juve' is an argument standing for the club name.
 
-It can also be: barca, real madrid, liverpool, etc.
+Other possible arguments: barca, real madrid, liverpool, etc.
 
 Classifier will be set to ORIENTED mode, taking into consideration players strong/weak foot while predicting score per position. 
 It might increase the average deviation per position (FIFA does not take this criterion into account).
