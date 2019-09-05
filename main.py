@@ -64,61 +64,74 @@ def set_dir_and_logger():
 
 if __name__ == '__main__':
 
-    # set logger and check if club name has been passed:
+    # set logger and check if club name (or cv) has been passed:
     set_dir_and_logger()
     if len(sys.argv) == 1:
-        logger.error("no arguments had been passed (club name should be passes as an argument)")
-        raise Exception("no arguments had been passed (club name should be passes as an argument)")
+        logger.error("no arguments had been passed (club name or cv should be passes as an argument)")
+        raise Exception("no arguments had been passed (club name or cv should be passes as an argument)")
     else:
         logger.info("GETTING STARTED!")
 
-    print("loading dataset . . .")
+    # club name has been given as an argument:
+    if sys.argv[1] != 'cv':
 
-    # create Data and Classifier objects:
-    dataset = Data.read_csv("Full_DF.csv")
-    classifier = Classifier(dataset, mode='oriented')
+        print("loading dataset . . .")
 
-    print("dataset has been loaded successfully.")
+        # create Data and Classifier objects:
+        dataset = Data.read_csv("Full_DF.csv")
+        classifier = Classifier(dataset, mode='oriented')
 
-    # predict score for a club:
-    club_name = ''
-    for i in range(1, len(sys.argv)):
-        club_name = club_name + ' ' + str(sys.argv[i])
-    club_name = club_name[1:]
+        print("dataset has been loaded successfully.")
 
-    try:
-        club_name = Club_Names.get_real(club_name)
-    except KeyError as e:
-        print(e)
+        # predict score for a club:
+        club_name = ''
+        for i in range(1, len(sys.argv)):
+            club_name = club_name + ' ' + str(sys.argv[i])
+        club_name = club_name[1:]
 
-    print("predicting FIFA scores for " + club_name + " players . . .")
+        try:
+            club_name = Club_Names.get_real(club_name)
+        except KeyError as e:
+            print(e)
 
-    positions_scores = classifier.set_squad_scores(club_name)
+        print("predicting FIFA scores for " + club_name + " players . . .")
 
-    print("scores predictions for " + club_name + " players have been written to Results", end='')
-    print("\\" + club_name + "_predictions.txt")
+        positions_scores = classifier.set_squad_scores(club_name)
 
-    # cross validation:
-    # classifier.crossvalidation()
+        print("scores predictions for " + club_name + " players have been written to Results", end='')
+        print("\\" + club_name + "_predictions.txt")
 
-    # read data for tactics setting:
-    club_squad = read_team(club_name, positions_scores)
+        # read data for tactics setting:
+        club_squad = read_team(club_name, positions_scores)
 
-    # create basic formations list:
-    f_433 = Formation("4-3-3", ['gk', 'lb', 'cb', 'cb', 'rb', 'cdm', 'cm', 'cm', 'lw', 'rw', 'st'])
-    f_352 = Formation("3-5-2", ['gk', 'cb', 'cb', 'cb', 'rwb', 'lwb', 'cm', 'cm', 'cam', 'st', 'st'])
-    f_442_diamond = Formation("4-4-2-Diamond", ['gk', 'rb', 'cb', 'cb', 'lb', 'cdm', 'cm', 'cm', 'cam', 'st', 'st'])
-    f_442 = Formation("4-4-2", ['gk', 'rb', 'cb', 'cb', 'lb', 'cdm', 'cdm', 'lm', 'rm', 'cf', 'st'])
-    basic_formations = [f_442_diamond, f_442, f_433, f_352]
+        # create basic formations list:
+        f_433 = Formation("4-3-3", ['gk', 'lb', 'cb', 'cb', 'rb', 'cdm', 'cm', 'cm', 'lw', 'rw', 'st'])
+        f_352 = Formation("3-5-2", ['gk', 'cb', 'cb', 'cb', 'rwb', 'lwb', 'cm', 'cm', 'cam', 'st', 'st'])
+        f_442_diamond = Formation("4-4-2-Diamond", ['gk', 'rb', 'cb', 'cb', 'lb', 'cdm', 'cm', 'cm', 'cam', 'st', 'st'])
+        f_442 = Formation("4-4-2", ['gk', 'rb', 'cb', 'cb', 'lb', 'cdm', 'cdm', 'lm', 'rm', 'cf', 'st'])
+        basic_formations = [f_442_diamond, f_442, f_433, f_352]
 
-    print("creating tactics for " + club_name + " squad . . .")
+        print("creating tactics for " + club_name + " squad . . .")
 
-    # set 3 best tactics for each formation:
-    for i, formation in enumerate(basic_formations):
-        mode = 'a'
-        if i is 0:
-            mode = 'w'  # create a new empty file
-        create_tactic(formation, club_squad, club_name, mode, 3)
+        # set 3 best tactics for each formation:
+        for i, formation in enumerate(basic_formations):
+            mode = 'a'
+            if i is 0:
+                mode = 'w'  # create a new empty file
+            create_tactic(formation, club_squad, club_name, mode, 3)
 
-    print("tactics for " + club_name + " squad have been written to Results", end='')
-    print("\\" + club_name + "_tactics.txt")
+        print("tactics for " + club_name + " squad have been written to Results", end='')
+        print("\\" + club_name + "_tactics.txt")
+
+    # cv has been given as an argument:
+    else:
+        print("loading dataset . . .")
+
+        # create Data and Classifier objects:
+        dataset = Data.read_csv("Full_DF.csv")
+        classifier = Classifier(dataset, mode='FIFA')
+
+        print("dataset has been loaded successfully.")
+
+        # cross validation:
+        classifier.crossvalidation()
