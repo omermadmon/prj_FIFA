@@ -191,8 +191,6 @@ class Tactic:
         wrapped function for the recursion one (self.rec_run())
         :return: no return value
         """
-        # for position,player in self._positions.items():
-        #    print (position, player)
         self.run_preprocess()
         self.rec_run({}, [], self._positions_order[0])
 
