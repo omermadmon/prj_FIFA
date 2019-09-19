@@ -63,7 +63,7 @@ def set_dir_and_logger():
 
 
 if __name__ == '__main__':
-
+    # testing something...
     # set logger and check if club name (or cv) has been passed:
     set_dir_and_logger()
     if len(sys.argv) == 1:
