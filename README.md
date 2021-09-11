@@ -1,6 +1,4 @@
-# FIFA Data Analysis Project
-
-Data analysis project engaged with official FIFA 18 dataset (via kaggle).
+# FIFA Rating Prediction & Lineups Optimization
 
 The project goals are:
 
